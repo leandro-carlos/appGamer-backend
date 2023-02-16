@@ -30,10 +30,9 @@ app.post("/games/:id/ads", async (request, response) => {
       yearsPlaying: body.yearsPlaying,
       discord: body.discord,
       weekDays: body.weekDays,
-      startDay: body.startDay,
-      hoursStart: ConvertHoursToMinutes(body.hoursStart),
-      hoursEnd: ConvertHoursToMinutes(body.hoursEnd),
-      useVoiceChanel: body.useVoiceChanel,
+      hourStart: ConvertHoursToMinutes(body.hourStart),
+      hourEnd: ConvertHoursToMinutes(body.hourEnd),
+      useVoiceChannel: body.useVoiceChannel,
     },
   });
 
@@ -47,9 +46,9 @@ app.get("/games/:id/ads", async (req, res) => {
     where: { gameId },
     select: {
       game: true,
-      hoursEnd: true,
+      hourEnd: true,
       id: true,
-      startDay: true,
+      hourStart: true,
       name: true,
       weekDays: true,
       yearsPlaying: true,
